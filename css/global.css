@@ -18,11 +18,9 @@ body {
 		}
 	h2 {
 		margin: 5px 0 10px;
-		line-height: 15px;
 	}
 	p {
 		font-size: 12px;
-		line-height: 12px;
 		margin-bottom: 10px;
 	}
 	a.button {
@@ -47,13 +45,24 @@ body {
 		clear:both;
 		background: #fff;
 		padding: 20px;
-		line-height: 0;
+		overflow: auto;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 	}
 	div.download {
 		text-align: center;
+	}
+	div.spinner {
+		float:left;
+		margin: 5px;
+		width: 50px;
+		height: 50px;
+		background: #000;		
+	}
+	div.spinner.large {
+		width: 300px;
+		height: 300px;		
 	}
 /* CODE STYLING */
 pre {
