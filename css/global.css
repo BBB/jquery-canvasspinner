@@ -1,0 +1,75 @@
+body {
+   	background:#dcdbd3;
+   	font-family: Helvetica, Arial, sans-serif;
+}
+	h1 {
+		margin: 0 0 25px;
+		text-shadow:0 1px 0 #F5F5F5;
+		color: #5C593D;
+		float:left;
+	}
+	p {
+		font-size: 12px;
+		line-height: 12px;
+		margin-bottom: 10px;
+	}
+	a.button {
+		float:right;
+		display:block;
+		font-size:11px;
+		background:#fff;
+		padding:5px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		color:#000;	
+		text-decoration:none;	
+	}
+#wrapper {
+	width: 540px;
+	margin: 0 auto;
+	padding: 25px 0;
+}
+	.polaroid {	
+		margin: 0 0 25px;
+		clear:both;
+		background: #fff;
+		padding: 20px;
+		line-height: 0;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+		ul.imagescrubber {
+			line-height: 0;
+			margin-bottom: 10px;
+		}	
+			ul.imagescrubber li {
+				display: inline;
+				float: left;	
+			}
+			
+/* CODE STYLING */
+pre {
+    padding: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 0;
+}
+	pre code {
+		display: block;
+		line-height: 15px;
+	}	
+		pre code .string { color: #3C3;}
+		pre code .constant { color: #66F;}
+		pre code .property { color: #A00;}
+		pre code .keyword { color: #E66;}
+		pre code .storage { color: #FC8;}
+		pre code .comment { color: #888;}
+pre, code {
+    font-family: Monaco, monospace;
+    font-size: 12px;
+    background: #111;
+    color: #F5F5F5;
+}
