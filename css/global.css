@@ -53,16 +53,17 @@ body {
 	div.download {
 		text-align: center;
 	}
-	div.spinner {
+	div.spinner-demo {
 		float:left;
 		margin: 5px;
 		width: 50px;
 		height: 50px;
 		background: #000;		
 	}
-	div.spinner.large {
+	div.spinner-demo.large {
 		width: 300px;
-		height: 300px;		
+		height: 300px;	
+		background: transparent;	
 	}
 /* CODE STYLING */
 pre {
