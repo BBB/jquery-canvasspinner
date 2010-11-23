@@ -12,30 +12,48 @@
 	  <span class="small">by <a href="http://github.com/BBB">Ollie Relph</a></span></h1>
 			
 	  <div class="description polaroid">
-		  <p>A HTML5 &lt;canvas /&gt; based loading spinner, with .gif fallback
+		  <p>A HTML5 &lt;canvas /&gt; based loading spinner, with .gif fallback</p>
 	  </div>
   	<div class="polaroid">
     	<h2>Dependencies</h2>
-    	<ul><li>jQuery 1.3+</li></ul>
+    	<p>jQuery 1.3+</p>
     	<h2>Authors</h2>
     	<p>Ollie Relph (ollie@relph.me)</p>
   	</div>
 
+    <div class="polaroid">
+      <h2>Demo</h2>
+      <p>Here shortly</p>
+    </div>
+
+    <div class="polaroid">
+      <h2>Usage</h2>
+      <p>Include the .js file in the head of your document:</p>
+      <pre><code>&lt;<span class="keyword">script</span> src=<span class="string">"js/jquery-spinner.dev.js"</span> type=<span class="string">"text/javascript"</span>&gt;&lt;<span class="keyword">/script</span>&gt;</code></pre>
+      <p>Basic usage. The plugin will automatically size the spinner to fit within the container.</p>
+      <pre><code><span class="keyword">$</span>(<span class="string">'div.loading'</span>).spinner();</code></pre>
+      <p>With options:</p>
+      <pre><code><span class="keyword">$</span>(<span class="string">'div.loading'</span>).spinner({
+      sqr: <span class="constant">40</span>,  // <span class="comment">// The width/ height of the spinner</span>
+      framerate : <span class="constant">10</span>, // <span class="comment">// The number of frames per second</span>
+      spokes : <span class="constant">16</span>, // <span class="comment">// The number of spokes in the spinner</span>
+      colour : <span class="string">'255,255,255'</span>, <span class="comment">// Must be an RGB string</span>
+      backup : <span class="string">'images/spinner.gif'</span> <span class="comment">// The path to the backup image</span>
+});</code></pre>
+
+    </div>
   	<div class="polaroid">
     	<h2>Download</h2>
       <div class="download">
+        <p>
         <a href="http://github.com/BBB/jquery-canvasspinner/zipball/master">
           <img border="0" width="90" src="http://github.com/images/modules/download/zip.png">
         </a>
         <a href="http://github.com/BBB/jquery-canvasspinner/tarball/master">
           <img border="0" width="90" src="http://github.com/images/modules/download/tar.png">
         </a>
+        </p>
       </div>
-    	<p>	
-        You can download this project in either
-      	<a href="http://github.com/BBB/jquery-canvasspinner/zipball/master">zip</a> or
-      	<a href="http://github.com/BBB/jquery-canvasspinner/tarball/master">tar</a> formats.
-    	</p>
     	<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
     	by running:</p>
     	<pre><code>$ <span class="keyword">git</span> <span class="constant">clone</span> <span class="string">git://github.com/BBB/jquery-canvasspinner</span></code></pre>
@@ -43,12 +61,6 @@
     <div class="footer polaroid">
       <p>Get the source code on GitHub : <a href="http://github.com/BBB/jquery-canvasspinner">BBB/jquery-canvasspinner</a></p>
   	</div>
-  	<!-- <pre><code><span class="keyword">$</span>(<span class="string">'ul.imagescrubber.skip-y'</span>).imagescrubber({
-  	width: <span class="constant">380</span>,
-  	height : <span class="constant">270</span>,
-  	items : <span class="string">'li'</span>,
-  	axis : <span class="string">'x'</span>
-  	});</code></pre> -->
 	​	​	</div>
 	​	​	​</div>
 
