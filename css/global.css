@@ -19,6 +19,7 @@ body {
 	h2 {
 		margin: 5px 0 10px;
 	}
+	ul,
 	p {
 		font-size: 12px;
 		margin-bottom: 10px;
