@@ -24,6 +24,13 @@ body {
 		font-size: 12px;
 		margin-bottom: 10px;
 	}
+	ul {
+		margin-left: 20px;
+		list-style-type: circle;
+	}
+		ul li {
+			margin-bottom: 8px;	
+		}
 	a.button {
 		float:right;
 		display:block;
