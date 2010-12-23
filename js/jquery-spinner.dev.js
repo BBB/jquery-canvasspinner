@@ -9,9 +9,15 @@
  	$.fn.spinner = function(settings) {
  		
  		settings = $.extend({
- 			sqr: 0,
+ 			sqr: undefined,
  			framerate : 10,
- 			spokes : 16,
+ 			spokeCount : 16,
+ 			rotation : 0,
+ 			spokeOffset : {
+ 				inner : undefined,
+ 				outer : undefined
+ 			},
+ 			spokeWidth : undefined,
  			colour : '255,255,255',
  			backup : 'images/spinner.gif'
  		}, settings || {});
@@ -21,15 +27,20 @@
  			var $this = $(this),
  				width = $this.width(),
  				height = $this.height(),
- 				ctx;
- 				
- 			if (settings.sqr === 0 ) {
- 				settings.sqr = Math.round(width >= height ? height : width);
- 			}
+ 				ctx,
+ 				hsqr,
+ 				$wrap,
+ 				$canv;
+ 						
+ 			settings.sqr = Math.round(width >= height ? height : width);
+ 			hsqr = settings.sqr/2;
+ 			// convert from deg to rad
+ 			settings.rotation = settings.rotation/180 * Math.PI
+			settings.spokeOffset.inner = settings.spokeOffset.inner || hsqr * 0.3;
+			settings.spokeOffset.outer = settings.spokeOffset.outer || hsqr * 0.6;	
  			
- 			var hsqr = settings.sqr/2, 			
-	 			$wrap = $('<div id="spinner-' + $.fn.spinner.count + '" class="spinner" />').css({'position' : 'absolute', 'z-index' : 999, 'left' : '50%', 'top' : '50%', 'margin' : hsqr * -1 + 'px 0 0 ' + hsqr * -1 + 'px', 'width' : settings.sqr, 'height' : settings.sqr })
- 		  		$canv = $('<canvas />').attr({ 'width' : settings.sqr, 'height' : settings.sqr });
+ 			$wrap = $('<div id="spinner-' + $.fn.spinner.count + '" class="spinner" />').css({'position' : 'absolute', 'z-index' : 999, 'left' : '50%', 'top' : '50%', 'margin' : hsqr * -1 + 'px 0 0 ' + hsqr * -1 + 'px', 'width' : settings.sqr, 'height' : settings.sqr })
+ 		    $canv = $('<canvas />').attr({ 'width' : settings.sqr, 'height' : settings.sqr });
  			
  			if ( $this.css('position') === 'static' ) {
  				$this.css({ 'position' : 'relative' });
@@ -41,7 +52,7 @@
 			if ( $canv[0].getContext ){  
 				ctx = $canv[0].getContext('2d');
 				ctx.translate(hsqr, hsqr);
-				ctx.lineWidth = Math.ceil(settings.sqr * 0.025);
+				ctx.lineWidth = settings.spokeWidth || Math.ceil(settings.sqr * 0.025);
 				ctx.lineCap = 'round'
 				this.loop = setInterval(drawSpinner, 1000/ settings.framerate);
 			} else {
@@ -52,13 +63,13 @@
 			
 			function drawSpinner () {
 				ctx.clearRect(hsqr * -1, hsqr * -1, settings.sqr, settings.sqr);
-				ctx.rotate(Math.PI * 2 / settings.spokes);
-				for (var i = 0; i < settings.spokes; i++) {
-					ctx.rotate(Math.PI * 2 / settings.spokes);
-					ctx.strokeStyle = 'rgba(' + settings.colour + ','+ i / settings.spokes +')';
+				ctx.rotate(Math.PI * 2 / settings.spokeCount + settings.rotation );
+				for (var i = 0; i < settings.spokeCount; i++) {
+					ctx.rotate(Math.PI * 2 / settings.spokeCount);
+					ctx.strokeStyle = 'rgba(' + settings.colour + ','+ i / settings.spokeCount +')';
 					ctx.beginPath();
-					ctx.moveTo(0, hsqr * 0.3);
-					ctx.lineTo(0, hsqr * 0.6);
+					ctx.moveTo(0, settings.spokeOffset.inner);
+					ctx.lineTo(0, settings.spokeOffset.outer);
 					ctx.stroke();
 				}
 			}  
