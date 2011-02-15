@@ -15,7 +15,9 @@
 
 body {
    	background:#FFF;
-   	font-family: 'GravurCondensed-Bold', Helvetica, Arial, sans-serif; }
+   	font-family: Helvetica, Arial, sans-serif; }
+   	h1, h2, h3, h4 {
+   		font-family: 'BPreplayRegular', Helvetica, Arial, sans-serif; }
 	h1 {
 		font-size: 50px;
 		margin: 0 0 25px;
@@ -49,9 +51,9 @@ body {
 			text-decoration: none; }
 	ul {
 		margin-left: 40px;
-		list-style-type: circle; }
+		list-style-type: disc; }
 		ul li {
-			margin-bottom: 8px;	 }
+			margin-bottom: 5px;	 }
 	a.button {
 		float:right;
 		display:block;
